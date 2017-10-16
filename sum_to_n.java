@@ -11,9 +11,17 @@ public class sum_to_n {
         int remaining_sum =0;
         for(int i=0;i<input.length;i++){
             remaining_sum = sum - input[i];
-            if(hashMap.containsKey(remaining_sum))
-                return true;
+            if(remaining_sum!=input[i]) {
+                if (hashMap.containsKey(remaining_sum)) {
+                    return true;
+                }
+            }
+            else {
 
+                    if (hashMap.get(remaining_sum).size() > 1) {
+                        return true;
+                    }
+                }
         }
 
         return false;
@@ -22,9 +30,9 @@ public class sum_to_n {
 
     public static void main(String[] args){
 
-            int [] input = {1,3,4,5,6,6};
+            int [] input = {1,1,2};
 
-            int sum = 100;
+            int sum = 12;
 
             Map<Integer,ArrayList<Integer>> hashMap = new HashMap<Integer, ArrayList<Integer>>();
 
