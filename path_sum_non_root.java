@@ -18,13 +18,10 @@ class Solution {
         
         if(root==null)
             return 0;
-        if(root.val-sum==0){
-            System.out.println(root.val+" "+sum);
-           return 1;
-        }
+      return (root.val==sum?1:0)+pathSumFrom(root.left,sum-root.val) + pathSumFrom(root.right,sum - root.val);
+       
             
-        
-        return pathSumFrom(root.left,sum-root.val) + pathSumFrom(root.right,sum - root.val);
+     
         
         
     }
